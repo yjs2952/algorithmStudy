@@ -1,5 +1,3 @@
-import lombok.ToString;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -42,7 +40,6 @@ public class MergeInterval_2 {
     }
 }
 
-@ToString
 class Interval_2 {
     int start;
     int end;
