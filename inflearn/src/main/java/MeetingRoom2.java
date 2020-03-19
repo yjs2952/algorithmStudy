@@ -1,3 +1,5 @@
+import lombok.ToString;
+
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.PriorityQueue;
@@ -25,7 +27,9 @@ public class MeetingRoom2 {
     }
 
     public int solve(Interval[] intervals) {
-        if (intervals == null || intervals.length <= 0) return 0;
+        if (intervals == null || intervals.length <= 0) {
+            return 0;
+        }
 
         Arrays.sort(intervals, Comparator.comparingInt(o -> o.start));
 
@@ -34,22 +38,21 @@ public class MeetingRoom2 {
         queue.offer(intervals[0]);
 
         for (int i = 1; i < intervals.length; i++) {
-            Interval interval = queue.poll();
-
-            if (interval.end <= intervals[i].start) {
-                interval.end = intervals[i].end;
+            Interval before = queue.poll();
+            if (before.end <= intervals[i].start) {
+                before.end = intervals[i].end;
             } else {
-
-                // 회의룸이 하나 더 필요하다
                 queue.offer(intervals[i]);
             }
 
-            queue.offer(interval);
+            queue.offer(before);
         }
 
+        System.out.println("queue : " + queue);
         return queue.size();
     }
 
+    @ToString
     static class Interval {
         int start;
         int end;

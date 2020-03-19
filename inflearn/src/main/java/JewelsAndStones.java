@@ -32,7 +32,7 @@ public class JewelsAndStones {
             }
         }*/
 
-        Set<Character> set = new HashSet();
+        Set<Character> set = new HashSet<>();
 
         for (int i = 0; i < inputJ.length(); i++) {
             set.add(inputJ.charAt(i));
