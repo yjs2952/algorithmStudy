@@ -2,7 +2,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TwoSum_2 {
+public class _03TwoSum_2 {
 
     /**
      * Given an array of integers, return indices of the two numbers such that they add up to a specific target.

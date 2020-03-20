@@ -5,12 +5,12 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
-public class MergeInterval_1 {
+public class _05MergeInterval_1 {
 
     public static void main(String[] args) {
         List<Interval_1> input = Arrays.asList(new Interval_1(2, 6), new Interval_1(1, 3), new Interval_1(8, 10), new Interval_1(15, 18));
 
-        MergeInterval_1 m = new MergeInterval_1();
+        _05MergeInterval_1 m = new _05MergeInterval_1();
 
         System.out.println(m.merge(input));
     }

@@ -1,7 +1,7 @@
 import java.util.HashSet;
 import java.util.Set;
 
-public class JewelsAndStones {
+public class _07JewelsAndStones {
 
     /**
      * You're given strings J representing the types of stones that are jewels, and S representing the stones you have.

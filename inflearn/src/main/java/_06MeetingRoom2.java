@@ -5,7 +5,7 @@ import java.util.Comparator;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
-public class MeetingRoom2 {
+public class _06MeetingRoom2 {
 
     /**
      * Given an array of meeting time intervals consisting of start and end times [[s1,e1],[s2,e2],...] (si < ei),
@@ -20,7 +20,7 @@ public class MeetingRoom2 {
         Interval[] input1 = {new Interval(0, 30), new Interval(5, 10), new Interval(15, 20), new Interval(25, 30)};
         Interval[] input2 = {new Interval(7, 10), new Interval(2, 4), new Interval(3, 6), new Interval(4, 5)};
 
-        MeetingRoom2 m = new MeetingRoom2();
+        _06MeetingRoom2 m = new _06MeetingRoom2();
 
         System.out.println("output1 : " + m.solve(input1));
         System.out.println("output2 : " + m.solve(input2));

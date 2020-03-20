@@ -1,4 +1,4 @@
-public class LicenseKeyFormatting {
+public class _08LicenseKeyFormatting {
     /**
      * You are given a license key represented as a string S which consists only alphanumeric character and dashes.
      * The string is separated into N+1 groups by N dashes.

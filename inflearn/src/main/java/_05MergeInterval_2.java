@@ -3,12 +3,12 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
-public class MergeInterval_2 {
+public class _05MergeInterval_2 {
 
     public static void main(String[] args) {
         List<Interval_2> input = Arrays.asList(new Interval_2(2, 6), new Interval_2(1, 7), new Interval_2(8, 10), new Interval_2(15, 18));
 
-        MergeInterval_2 m = new MergeInterval_2();
+        _05MergeInterval_2 m = new _05MergeInterval_2();
 
         System.out.println(m.merge(input));
     }

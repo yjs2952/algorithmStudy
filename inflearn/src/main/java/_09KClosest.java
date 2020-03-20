@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class KClosest {
+public class _09KClosest {
     /**
      * We have a list of points on the plane. Find the K closest points to the origin (0, 0).
      * (Here, the distance between two points on a plane is the Euclidean distance.)
@@ -16,9 +16,10 @@ public class KClosest {
      */
 
     public static void main(String[] args) {
-        List<List<Integer>> input = Arrays.asList(Arrays.asList(1,3), Arrays.asList(-2,2));
+        List<List<Integer>> input = Arrays.asList(Arrays.asList(1,3), Arrays.asList(-2,2), Arrays.asList(-2,3));
+        int k = 2;
 
-        System.out.println("result : " + Arrays.deepToString(kClosest(input, 1)));
+        System.out.println("result : " + Arrays.deepToString(kClosest(input, k)));
     }
 
     public static int[][] kClosest(List<List<Integer>> list, int k) {
@@ -34,12 +35,9 @@ public class KClosest {
             queue.offer(new int[]{integers.get(0), integers.get(1)});
         }
 
-        result[0] = queue.poll();
-
-//        for (int i = 0; i < list.size(); i++) {
-//            queue.offer(result[i]);
-//        }
-
+        for (int i = 0; i < k; i++) {
+            result[i] = queue.poll();
+        }
 
         return result;
     }
