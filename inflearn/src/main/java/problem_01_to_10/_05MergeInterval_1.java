@@ -1,3 +1,5 @@
+package problem_01_to_10;
+
 import lombok.ToString;
 
 import java.util.ArrayList;

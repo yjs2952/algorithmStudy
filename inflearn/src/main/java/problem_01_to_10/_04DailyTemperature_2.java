@@ -1,3 +1,5 @@
+package problem_01_to_10;
+
 import java.util.Arrays;
 import java.util.Stack;
 

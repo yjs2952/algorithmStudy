@@ -1,3 +1,5 @@
+package problem_01_to_10;
+
 import java.util.*;
 
 public class _09KClosest {

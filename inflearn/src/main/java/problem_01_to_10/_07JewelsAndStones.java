@@ -1,3 +1,5 @@
+package problem_01_to_10;
+
 import java.util.HashSet;
 import java.util.Set;
 

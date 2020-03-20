@@ -1,3 +1,5 @@
+package problem_01_to_10;
+
 import java.util.Arrays;
 
 public class _04DailyTemperature_1 {

@@ -1,8 +1,8 @@
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+package problem_01_to_10;
 
-public class _03TwoSum_2 {
+import java.util.Arrays;
+
+public class _03TwoSum_1 {
 
     /**
      * Given an array of integers, return indices of the two numbers such that they add up to a specific target.
@@ -16,7 +16,7 @@ public class _03TwoSum_2 {
     public static void main(String[] args) {
         int[] nums = {2, 7, 11, 15};
         int target = 18;
-        
+
         System.out.println(Arrays.toString(solve(nums, target)));
     }
 
@@ -24,15 +24,19 @@ public class _03TwoSum_2 {
 
         int[] result = null;
 
-        Map<Integer, Integer> map = new HashMap<>();
-
         for (int i = 0; i < nums.length; i++) {
-            if (map.containsKey(nums[i])) {
-                result = new int[2];
-                result[0] = map.get(nums[i]);
-                result[1] = i;
-            } else {
-                map.put(target - nums[i], i); // [16,0] [11,1] [7,2] [3, 3]
+            int temp = target - nums[i];
+
+            if (temp <= 0) {
+                continue;
+            }
+
+            for (int j = i + 1; j < nums.length; j++) {
+                if (temp == nums[j]) {
+                    result = new int[2];
+                    result[0] = i;
+                    result[1] = j;
+                }
             }
         }
 

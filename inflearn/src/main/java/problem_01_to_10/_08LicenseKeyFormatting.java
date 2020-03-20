@@ -1,3 +1,5 @@
+package problem_01_to_10;
+
 public class _08LicenseKeyFormatting {
     /**
      * You are given a license key represented as a string S which consists only alphanumeric character and dashes.
