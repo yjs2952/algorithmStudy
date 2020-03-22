@@ -52,7 +52,6 @@ public class _12LongestSubMostTwoDist {
             length = Math.max(length, end - start);
         }
 
-
         return length;
     }
 }
