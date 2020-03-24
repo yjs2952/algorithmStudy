@@ -17,12 +17,12 @@ public class _05MergeInterval_1 {
         System.out.println(m.merge(input));
     }
 
-    Comparator<Interval_1> comp = new Comparator<Interval_1>() {
-        @Override
-        public int compare(Interval_1 o1, Interval_1 o2) {
-            return o1.start - o2.start;
-        }
-    };
+//    Comparator<Interval_1> comp = new Comparator<Interval_1>() {
+//        @Override
+//        public int compare(Interval_1 o1, Interval_1 o2) {
+//            return o1.start - o2.start;
+//        }
+//    };
 
     public List<Interval_1> merge(List<Interval_1> intervals) {
 

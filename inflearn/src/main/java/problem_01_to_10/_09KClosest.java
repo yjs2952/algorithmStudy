@@ -30,7 +30,7 @@ public class _09KClosest {
             return null;
         }
 
-        int[][] result = new int[list.size()][];
+        int[][] result = new int[k][];
         Queue<int[]> queue = new PriorityQueue<>(list.size(), Comparator.comparingInt(o -> o[0] * o[0] + o[1] * o[1]));
 
         for (List<Integer> integers : list) {

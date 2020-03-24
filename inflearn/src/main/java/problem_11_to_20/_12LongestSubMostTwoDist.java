@@ -18,7 +18,7 @@ public class _12LongestSubMostTwoDist {
      * Explanation: t is "aabbb" which its length is 5.
      */
     public static void main(String[] args) {
-        String input1 = "ececa";
+        String input1 = "eceba";
         String input2 = "ccaabbb";
 
         System.out.println(lengthOfLongestSubstringTwoDistinct(input1));
@@ -27,24 +27,23 @@ public class _12LongestSubMostTwoDist {
     }
 
     public static int lengthOfLongestSubstringTwoDistinct(String s) {
-        int end = 0, start = 0, cnt = 0, length = 0;
+        int start = 0, end = 0, distCnt = 0, length = 0;
+
         Map<Character, Integer> map = new HashMap<>();
 
         while (end < s.length()) {
-            char key = s.charAt(end);
-            map.put(key, map.getOrDefault(key, 0) + 1);
+            char endChar = s.charAt(end);
+            map.put(endChar, map.getOrDefault(endChar, 0) + 1);
 
-            if (map.get(key) == 1) {
-                cnt++;
-            }
-
+            if (map.get(endChar) == 1) distCnt++;
             end++;
-            while (cnt > 2) {
-                char c = s.charAt(start);
-                map.put(c, map.get(c) - 1);
+            while (distCnt > 2) {
+                char startChar = s.charAt(start);
 
-                if (map.get(c) == 0) {
-                    cnt--;
+                map.put(startChar, map.get(startChar) - 1);
+
+                if (map.get(startChar) == 0) {
+                    distCnt--;
                 }
                 start++;
             }
