@@ -27,7 +27,49 @@ public class _15FindAllAnagrams {
     public static List<Integer> findAnagrams(String txt, String pat) {
         List<Integer> result = new ArrayList<>();
 
+        if (txt == null || txt.length() <= 0 || pat == null || pat.length() <= 0 || txt.length() < pat.length())
+            return result;
+
+        int[] patArr = new int[256];
+        boolean isSame = true;
+
+        for (int i = 0; i < pat.length(); i++) {
+            patArr[pat.charAt(i)]++;
+        }
+
+        for (int i = 0; i < txt.length() - pat.length() + 1; i++) {
+            int[] txtArr = new int[256];
+
+            for (int j = 0; j < pat.length(); j++) {
+                txtArr[txt.charAt(i + j)]++;
+            }
+
+//            if (check(patArr, txtArr)) {
+//                result.add(i);
+//            }
+
+            for (int k = 0; k < patArr.length; k++) {
+                if (patArr[k] != txtArr[k]) {
+                    isSame = false;
+                    break;
+                }
+            }
+
+            if (isSame) {
+                result.add(i);
+            }
+            isSame = true;
+        }
 
         return result;
     }
+
+//    private static boolean check(int[] patArr, int[] txtArr) {
+//        for (int k = 0; k < patArr.length; k++) {
+//            if (patArr[k] != txtArr[k]) {
+//                return false;
+//            }
+//        }
+//        return true;
+//    }
 }
