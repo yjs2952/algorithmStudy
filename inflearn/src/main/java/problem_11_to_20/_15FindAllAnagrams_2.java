@@ -3,7 +3,7 @@ package problem_11_to_20;
 import java.util.ArrayList;
 import java.util.List;
 
-public class _15FindAllAnagrams {
+public class _15FindAllAnagrams_2 {
     /**
      * Given a string s and a non-empty string p, find all the start indices of p's anagrams in s.
      * Strings consists of lowercase English letters only and the length of both strings s and p will not be larger than 20,100.
@@ -30,43 +30,30 @@ public class _15FindAllAnagrams {
         if (txt == null || txt.length() <= 0 || pat == null || pat.length() <= 0 || txt.length() < pat.length())
             return result;
 
-        int[] patArr = new int[256];
-        boolean isSame = true;
+        int[] patArr = new int[26];
 
         for (int i = 0; i < pat.length(); i++) {
-            patArr[pat.charAt(i)]++;
+            patArr[pat.charAt(i) - 'a']++;
         }
 
         for (int i = 0; i < txt.length() - pat.length() + 1; i++) {
-            int[] txtArr = new int[256];
 
+            int[] txtArr = new int[26];
             for (int j = 0; j < pat.length(); j++) {
-                txtArr[txt.charAt(i + j)]++;
+                txtArr[txt.charAt(i + j) - 'a']++;
             }
 
             if (check(patArr, txtArr)) {
                 result.add(i);
             }
-
-//            for (int k = 0; k < patArr.length; k++) {
-//                if (patArr[k] != txtArr[k]) {
-//                    isSame = false;
-//                    break;
-//                }
-//            }
-//
-//            if (isSame) {
-//                result.add(i);
-//            }
-//            isSame = true;
         }
 
         return result;
     }
 
     private static boolean check(int[] patArr, int[] txtArr) {
-        for (int k = 0; k < patArr.length; k++) {
-            if (patArr[k] != txtArr[k]) {
+        for (int i = 0; i < patArr.length; i++) {
+            if (patArr[i] != txtArr[i]) {
                 return false;
             }
         }
