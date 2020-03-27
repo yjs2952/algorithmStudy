@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class GcdLcm {
     public static void main(String[] args) {
         System.out.println(Arrays.toString(solution(3, 12)));
-        System.out.println(Arrays.toString(solution(2, 5)));
+        System.out.println(Arrays.toString(solution(4, 42)));
     }
 
     public static int[] solution(int n, int m) {
