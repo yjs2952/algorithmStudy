@@ -1,4 +1,4 @@
-package problem_11_to_20;
+package others;
 
 import java.util.Arrays;
 
