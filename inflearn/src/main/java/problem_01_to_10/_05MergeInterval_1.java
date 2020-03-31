@@ -31,7 +31,7 @@ public class _05MergeInterval_1 {
         List<Interval_1> result = new ArrayList<>();
 
 //        Collections.sort(intervals, comp);
-//        Collections.sort(intervals, (o1, o2) -> o1.start - o2.start);
+        intervals.sort((o1, o2) -> o1.start - o2.start);
 //        intervals.sort((o1, o2) -> o1.start - o2.start);
 
         intervals.sort(Comparator.comparingInt(o -> o.start));
