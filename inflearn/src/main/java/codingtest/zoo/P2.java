@@ -1,4 +1,4 @@
-package zoo;
+package codingtest.zoo;
 
 import java.util.Comparator;
 import java.util.HashMap;

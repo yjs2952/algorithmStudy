@@ -1,4 +1,4 @@
-package tm;
+package codingtest.tm;
 
 public class P1 {
 
@@ -13,10 +13,10 @@ public class P1 {
             priceArray[priceArrayIdx-1] = priceArrayIdx * 1000;
         }
 
-        System.out.println("가격의 배열인덱스 : " + getSearchPriceArrayIntex(priceArray, 690000));
+        System.out.println("가격의 배열인덱스 : " + getSearchPriceArrayIndex(priceArray, 690000));
     }
 
-    public static int getSearchPriceArrayIntex(int[] priceArray, int searchPrice) {
+    public static int getSearchPriceArrayIndex(int[] priceArray, int searchPrice) {
         int mid;
         int left = 0;
         int right = priceArray.length - 1;

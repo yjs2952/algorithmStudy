@@ -1,4 +1,4 @@
-package zoo;
+package codingtest.zoo;
 
 import java.util.HashMap;
 import java.util.Map;

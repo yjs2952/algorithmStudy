@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class _02_law_of_big_number {
+public class _02_lawOfBigNumber {
     public static void main(String[] args) {
         String input = "5 8 3\n2 4 5 4 6";
 

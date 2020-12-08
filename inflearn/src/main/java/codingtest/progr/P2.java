@@ -1,4 +1,4 @@
-package progr;
+package codingtest.progr;
 
 public class P2 {
 

@@ -1,4 +1,4 @@
-package lie;
+package codingtest.lie;
 
 import java.util.Stack;
 

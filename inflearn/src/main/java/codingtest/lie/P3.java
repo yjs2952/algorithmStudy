@@ -1,4 +1,4 @@
-package lie;
+package codingtest.lie;
 
 public class P3 {
     public static void main(String[] args) {

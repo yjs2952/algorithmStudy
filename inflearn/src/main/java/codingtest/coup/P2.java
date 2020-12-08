@@ -1,4 +1,4 @@
-package coup;
+package codingtest.coup;
 
 import java.util.HashMap;
 import java.util.HashSet;

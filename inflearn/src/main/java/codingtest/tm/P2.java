@@ -1,4 +1,4 @@
-package tm;
+package codingtest.tm;
 
 public class P2 {
 
