@@ -13,7 +13,7 @@ public class P4 {
 
     private static int solution(int[] array) {
         int ans = 0, max_so_far = 0;
-        for (int i = 0; i < array.length; ++i) {
+        for (int i = 0; i < array.length; i++) {
 
             // Find maximum in prefix arr[0..i]
             max_so_far = Math.max(max_so_far, array[i]);
