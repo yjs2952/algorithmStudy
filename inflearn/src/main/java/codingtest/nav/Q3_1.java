@@ -1,5 +1,6 @@
 package codingtest.nav;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
@@ -37,31 +38,29 @@ public class Q3_1 {
 
                 if (i == 0) {
                     next = sb.charAt(i + 1);
-                    sb.setCharAt(i, getRandomLetter(next));
+                    sb.setCharAt(i, getRandomLetterWithoutExceptLetters(next));
                 } else if (i == riddleSize - 1) {
                     before = sb.charAt(i - 1);
-                    sb.setCharAt(i, getRandomLetter(before));
+                    sb.setCharAt(i, getRandomLetterWithoutExceptLetters(before));
                 } else {
                     next = sb.charAt(i + 1);
                     before = sb.charAt(i - 1);
-                    sb.setCharAt(i, getRandomLetter(before, next));
+                    sb.setCharAt(i, getRandomLetterWithoutExceptLetters(before, next));
                 }
             }
         }
         return sb.toString();
     }
 
-    private static char getRandomLetter(Character ...filterLetters) {
-        for (Character letter : filterLetters) {
+    private static char getRandomLetterWithoutExceptLetters(Character ...exceptLetters) {
+        for (Character letter : exceptLetters) {
             LETTERS.remove(letter);
         }
 
         int size = LETTERS.size();
         char result = LETTERS.get(RANDOM.nextInt(size));
 
-        for (Character letter : filterLetters) {
-            LETTERS.add(letter);
-        }
+        Collections.addAll(LETTERS, exceptLetters);
         return result;
     }
 }
