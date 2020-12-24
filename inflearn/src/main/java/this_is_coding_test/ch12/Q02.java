@@ -2,7 +2,7 @@ package this_is_coding_test.ch12;
 
 import java.util.Arrays;
 
-public class Q2 {
+public class Q02 {
     public static void main(String[] args) {
         String input = "K1KA5CB7";
         String input1 = "AJKDLSI412K4JSJ9D";
@@ -31,7 +31,6 @@ public class Q2 {
             }
         }
 
-
         if (sum > 0) sb.append(sum);
 
         return sb.toString().trim();
@@ -50,7 +49,7 @@ public class Q2 {
         }
 
         StringBuilder sb = new StringBuilder(String.valueOf(chars));
-        sb.append(sum);
+        if (sum > 0) sb.append(sum);
         return sb.toString().trim();
     }
 }

@@ -13,15 +13,15 @@ public class P3 {
         int number7 = -4440;
         int number8 = 6666;
 
-//        System.out.println(solution(number));
+        System.out.println(solution(number));
         System.out.println(solution(number1));
-//        System.out.println(solution(number2));
-//        System.out.println(solution(number3));
-//        System.out.println(solution(number4));
-//        System.out.println(solution(number5));
-//        System.out.println(solution(number6));
-//        System.out.println(solution(number7));
-//        System.out.println(solution(number8));
+        System.out.println(solution(number2));
+        System.out.println(solution(number3));
+        System.out.println(solution(number4));
+        System.out.println(solution(number5));
+        System.out.println(solution(number6));
+        System.out.println(solution(number7));
+        System.out.println(solution(number8));
     }
 
     private final static int FIVE = 5;
