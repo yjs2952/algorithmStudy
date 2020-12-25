@@ -1,6 +1,6 @@
 package this_is_coding_test.ch11;
 
-public class Q5 {
+public class Q05 {
     public static void main(String[] args) {
         int[] array = {1, 3, 2, 3, 2};
         int[] array2 = {1, 5, 4, 3, 2, 4, 5, 2};
