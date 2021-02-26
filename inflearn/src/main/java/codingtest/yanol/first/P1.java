@@ -1,4 +1,4 @@
-package codingtest.yanol;
+package codingtest.yanol.first;
 
 /**
  * n < ?? < 1000000000

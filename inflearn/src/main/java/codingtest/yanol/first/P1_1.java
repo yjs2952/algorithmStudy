@@ -1,4 +1,4 @@
-package codingtest.yanol;
+package codingtest.yanol.first;
 
 import java.util.ArrayList;
 import java.util.List;

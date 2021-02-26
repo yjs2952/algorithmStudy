@@ -17,8 +17,8 @@ public class Q2 {
         while (l < r) {
             int m = (l + r) / 2;
 
-            if (A[l] == X) {
-                return l;
+            if (A[m] == X) {
+                return m;
             }
 
             if (A[m] > X) {
