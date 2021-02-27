@@ -15,9 +15,9 @@ public class P1_1 {
         System.out.println("performance : " + (end - start));
     }
 
-    public static int solution(int[] array) {
+    public static int solution(int[] A) {
         SortedSet<Integer> sortedSet = new TreeSet<>();
-        for (int number : array) {
+        for (int number : A) {
             sortedSet.add(number);
         }
 

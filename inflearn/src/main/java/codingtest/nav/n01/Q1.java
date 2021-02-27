@@ -1,4 +1,4 @@
-package codingtest.nav;
+package codingtest.nav.n01;
 
 import java.util.Arrays;
 import java.util.Random;

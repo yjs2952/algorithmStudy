@@ -1,4 +1,4 @@
-package codingtest.nav;
+package codingtest.nav.n01;
 
 import java.util.List;
 import java.util.stream.Collectors;
