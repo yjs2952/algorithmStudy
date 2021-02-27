@@ -47,9 +47,7 @@ public class P1_1 {
         int index = 0;
 
         for (int i = 0; i < list.size(); i++) {
-            if (list.get(i) <= 0) {
-                continue;
-            } else {
+            if (list.get(i) > 0) {
                 index = i;
                 break;
             }
