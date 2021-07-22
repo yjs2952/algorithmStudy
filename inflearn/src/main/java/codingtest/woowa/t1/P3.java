@@ -14,16 +14,19 @@ public class P3 {
     }
 
     private static int solution(int[] A) {
-        Set<Integer> set = new HashSet<>();
+        Set<Integer> positiveSet = new HashSet<>();
+        Set<Integer> negativeSet = new HashSet<>();
         for (int integer : A) {
             if (integer > 0) {
-                set.add(integer);
+                positiveSet.add(integer);
+            } else {
+                negativeSet.add(integer);
             }
         }
 
         int max = 0;
-        for (int integer : A) {
-            if (set.contains(-integer)) {
+        for (int integer : negativeSet) {
+            if (positiveSet.contains(-integer)) {
                 max = Math.max(max, -integer);
             }
         }
