@@ -19,11 +19,11 @@ public class P1 {
 
         int sum = getSum(N);
 
-        while (true) {
+        if (sum == 1) {
+            return N * 10;
+        }
 
-            if (sum == 1) {
-                return N * 10;
-            }
+        while (true) {
 
             N = N + 1;
             int result = getSum(N);
