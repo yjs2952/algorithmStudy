@@ -10,8 +10,12 @@ public class P1 {
         int n1 = 6;
         int[][] delivery1 = {{1,3,1},{3,5,0},{5,4,0},{2,5,0}};
 
+        int n3 = 7;
+        int[][] delivery3 = {{6, 5, 0}, {3, 1, 1}, {5, 1, 0}, {6, 7, 0}, {7, 3, 1}, {5, 2, 0}};
+
         System.out.println(solution(n1, delivery1));
         System.out.println(solution(n, delivery));
+        System.out.println(solution(n3, delivery3));
     }
 
     private static String solution(int n, int[][] delivery) {
