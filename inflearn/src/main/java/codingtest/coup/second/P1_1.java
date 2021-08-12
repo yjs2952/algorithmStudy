@@ -41,14 +41,15 @@ public class P1_1 {
 
             if (isDelivered) {
                 deliveryResult.put(productNumber, "O");
-            } else {
-                if ("O".equals(deliveryResult.get(productNumber))) {
-                    int nextNumber = productNumber == productNumbers[0] ? productNumbers[1] : productNumbers[0];
-                    deliveryResult.put(nextNumber, "X");
-                }
-
-                deliveryResult.putIfAbsent(productNumber, "?");
+                continue;
             }
+
+            if ("O".equals(deliveryResult.get(productNumber))) {
+                int nextNumber = i == 0 ? productNumbers[1] : productNumbers[0];
+                deliveryResult.put(nextNumber, "X");
+            }
+
+            deliveryResult.putIfAbsent(productNumber, "?");
         }
     }
 
