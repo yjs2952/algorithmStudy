@@ -1,52 +1,47 @@
-package problem_queue_stack;
+package codingtest.mrt;
 
 import java.util.Stack;
 
-public class _02ValidParenthese {
-
+public class P2 {
     public static void main(String[] args) {
         String input1 = "{[]}";
         String input2 = "()[]{}";
-        String input3 = "([)]";
+        String input3 = "()((({}})({}[]]";
         String input4 = "(]";
 
-        System.out.println(isValid(input1));
-        System.out.println(isValid(input2));
-        System.out.println(isValid(input3));
-        System.out.println(isValid(input4));
+//        System.out.println(printValidationResult(input1));
+//        System.out.println(printValidationResult(input2));
+        System.out.println(printValidationResult(input3));
+        System.out.println(printValidationResult(input4));
     }
 
-    public static boolean isValid(String s) {
+    public static String printValidationResult(String s) {
+        char[] charArray = s.toCharArray();
         Stack<Character> stack = new Stack<>();
 
-        char[] charArray = s.toCharArray();
-        stack.push(charArray[0]);
-
-        for (int i = 1; i < s.length(); i++) {
-            switch (charArray[i]) {
-                case '}' :
+        for (char c : charArray) {
+            switch (c) {
+                case '}':
                     if (!stack.empty() && stack.peek() == '{') {
                         stack.pop();
-                        break;
                     }
-                case ']' :
+                    break;
+                case ']':
                     if (!stack.empty() && stack.peek() == '[') {
                         stack.pop();
-                        break;
                     }
                     break;
                 case ')':
                     if (!stack.empty() && stack.peek() == '(') {
                         stack.pop();
-                        break;
                     }
                     break;
                 default:
-                    stack.push(charArray[i]);
+                    stack.push(c);
                     break;
             }
         }
 
-        return stack.empty();
+        return stack.empty() ? "True" : "False";
     }
 }
