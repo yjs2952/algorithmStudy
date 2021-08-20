@@ -27,27 +27,27 @@ public class P3 {
         return result;
     }
 
-//    private static void bfs(int[][] board, int i, int j) {
-//        Queue<int[]> queue = new LinkedList<>();
-//        queue.offer(new int[]{i, j});
-//
-//        while (!queue.isEmpty()) {
-//            int number = board[i][j];
-//            int size = queue.size();
-//            int[] point = queue.poll();
-//
-//            for (int k = 0; k < size; k++) {
-//                for (int[] pos : POSITION) {
-//
-//                    int x = point[0] + pos[0];
-//                    int y = point[1] + pos[1];
-//
-//                    if (x >= 0 && x < board.length && y >= 0 && y < board[0].length && board[x][y] == number) {
-//
-//                        queue.offer(new int[]{x, y});
-//                    }
-//                }
-//            }
-//        }
-//    }
+    private static void bfs(int[][] board, int i, int j) {
+        Queue<int[]> queue = new LinkedList<>();
+        queue.offer(new int[]{i, j});
+
+        while (!queue.isEmpty()) {
+            int number = board[i][j];
+            int size = queue.size();
+            int[] point = queue.poll();
+
+            for (int k = 0; k < size; k++) {
+                for (int[] pos : POSITION) {
+
+                    int x = point[0] + pos[0];
+                    int y = point[1] + pos[1];
+
+                    if (x >= 0 && x < board.length && y >= 0 && y < board[0].length && board[x][y] == number) {
+
+                        queue.offer(new int[]{x, y});
+                    }
+                }
+            }
+        }
+    }
 }

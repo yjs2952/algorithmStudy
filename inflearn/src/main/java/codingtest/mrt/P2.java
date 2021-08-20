@@ -9,8 +9,8 @@ public class P2 {
         String input3 = "()((({}})({}[]]";
         String input4 = "(]";
 
-//        System.out.println(printValidationResult(input1));
-//        System.out.println(printValidationResult(input2));
+        System.out.println(printValidationResult(input1));
+        System.out.println(printValidationResult(input2));
         System.out.println(printValidationResult(input3));
         System.out.println(printValidationResult(input4));
     }
@@ -24,18 +24,27 @@ public class P2 {
                 case '}':
                     if (!stack.empty() && stack.peek() == '{') {
                         stack.pop();
+                        break;
+                    } else {
+                        return "False";
                     }
-                    break;
+//                    break;
                 case ']':
                     if (!stack.empty() && stack.peek() == '[') {
                         stack.pop();
+                        break;
+                    } else {
+                        return "False";
                     }
-                    break;
+//                    break;
                 case ')':
                     if (!stack.empty() && stack.peek() == '(') {
                         stack.pop();
+                        break;
+                    } else {
+                        return "False";
                     }
-                    break;
+//                    break;
                 default:
                     stack.push(c);
                     break;

@@ -16,11 +16,6 @@ public class P1 {
 
     private static void solution(String[] logs) {
         Map<Integer, Integer> countMap = new HashMap<>();
-        List<String> list = getSimpleLogs(logs, countMap);
-        printResult(countMap, list);
-    }
-
-    private static List<String> getSimpleLogs(String[] logs, Map<Integer, Integer> countMap) {
         List<String> list = new ArrayList<>();
         list.add(logs[0]);
 
@@ -39,14 +34,14 @@ public class P1 {
                 list.add(nextLog);
             }
         }
-        return list;
+        printResult(countMap, list);
     }
 
     private static void printResult(Map<Integer, Integer> countMap, List<String> list) {
         System.out.println(list.size());
 
         for (int i = 0; i < list.size(); i++) {
-            if (countMap.get(i) != null) {
+            if (countMap.containsKey(i)) {
                 System.out.println(list.get(i) + " (" + countMap.get(i) + ")");
                 continue;
             }
