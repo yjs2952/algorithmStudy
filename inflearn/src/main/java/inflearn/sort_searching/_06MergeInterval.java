@@ -38,6 +38,31 @@ public class _06MergeInterval {
         return list.toArray(new int[list.size()][]);
     }
 
+    private static int[][] solution2(int[][] intervals) {
+        List<int[]> res = new ArrayList<>();
+        if (intervals.length == 0)
+            return res.toArray(new int[0][]);
+
+        Arrays.sort(intervals, Comparator.comparingInt(a -> a[0]));
+
+        int start = intervals[0][0];
+        int end = intervals[0][1];
+
+        for (int[] interval : intervals) {
+            if (end >= interval[0]) {
+                end = Math.max(end, interval[1]);//6
+            } else {
+                res.add(new int[]{start, end});
+                start = interval[0];
+                end = interval[1];
+            }
+
+        }
+
+        res.add(new int[]{start, end});
+        return res.toArray(new int[res.size()][]);
+    }
+
 //    private static Comparator<int[]> comp() {
 //        return (o1, o2) -> {
 //            if (o1[0] > o2[0]) {
