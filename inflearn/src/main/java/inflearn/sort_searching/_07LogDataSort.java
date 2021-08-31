@@ -25,9 +25,9 @@ public class _07LogDataSort {
             } else if (isDigit1 && isDigit2) {  // 모두 숫자
                 return 0;
             } else if (isDigit1 && !isDigit2) { // 첫번째 숫자, 두번째 문자
-                return 1;
+                return 1;           // 내림차순
             } else {                            // 첫번째 문자, 두번째 숫자
-                return -1;
+                return -1;          // 오름차순
             }
         });
         return logs;
