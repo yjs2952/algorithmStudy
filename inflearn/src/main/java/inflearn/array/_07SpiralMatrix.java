@@ -1,23 +1,15 @@
-package problem_11_to_20;
+package inflearn.array;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class _16SpiralMatrix {
-
-    /**
-     * Given a matrix of m x n elements (m rows, n columns), return all elements of the matrix in spiral order
-     */
+public class _07SpiralMatrix {
     public static void main(String[] args) {
-        int[][] matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
-        int[][] matrix2 = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}};
-        int[][] matrix3 = {{1, 2, 3, 4}, {5, 6, 7, 8}};
-        System.out.println(solve(matrix));
-        System.out.println(solve(matrix2));
-        System.out.println(solve(matrix3));
+        System.out.println(solution(new int[][]{{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}}));
+        System.out.println(solution(new int[][]{{1, 2, 3, 4}, {5, 6, 7, 8}}));
     }
 
-    public static List<Integer> solve(int[][] matrix) {
+    private static List<Integer> solution(int[][] matrix) {
         List<Integer> result = new ArrayList<>();
         int rowStart = 0;
         int rowEnd = matrix.length - 1;
@@ -37,25 +29,21 @@ public class _16SpiralMatrix {
             }
             colEnd--;
 
-            // left
             if (rowStart <= rowEnd) {
+                // left
                 for (int i = colEnd; i >= colStart; i--) {
                     result.add(matrix[rowEnd][i]);
                 }
             }
             rowEnd--;
 
-            // up
             if (colStart <= colEnd) {
-//                if (rowStart <= rowEnd) {
-                    for (int i = rowEnd; i >= rowStart; i--) {
-                        result.add(matrix[i][colStart]);
-                    }
-//                }
+                for (int i = rowEnd; i >= rowStart; i--) {
+                    result.add(matrix[i][colStart]);
+                }
             }
             colStart++;
         }
-
         return result;
     }
 }
