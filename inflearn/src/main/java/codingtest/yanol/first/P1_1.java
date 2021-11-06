@@ -1,57 +1,30 @@
 package codingtest.yanol.first;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.SortedSet;
-import java.util.TreeSet;
+import java.util.HashSet;
+import java.util.Set;
 
 public class P1_1 {
 
     public static void main(String[] args) {
         int[] array = {1, 3, 6, 4, 1, 2};
-        long start = System.currentTimeMillis();
         System.out.println(solution(array));
-        long end = System.currentTimeMillis();
-        System.out.println("performance : " + (end - start));
+        System.out.println(solution(new int[]{1, 2, 3}));
+        System.out.println(solution(new int[]{-1, -3}));
     }
 
     public static int solution(int[] A) {
-        SortedSet<Integer> sortedSet = new TreeSet<>();
-        for (int number : A) {
-            sortedSet.add(number);
-        }
-
-        List<Integer> list = new ArrayList<>(sortedSet);
-
-        int index = getIndex(list);
-
-        if (index == 0 && list.get(0) < 0) {
-            return 1;
-        }
-
-        int result = 1;
-
-        for (int i = index; i < list.size(); i++) {
-
-            if (list.get(i) != result) {
-                return result;
-            } else {
-                result++;
+        int N = A.length;
+        Set<Integer> set = new HashSet<>();
+        for (int a : A) {
+            if (a > 0) {
+                set.add(a);
             }
         }
-
-        return result;
-    }
-
-    private static int getIndex(List<Integer> list) {
-        int index = 0;
-
-        for (int i = 0; i < list.size(); i++) {
-            if (list.get(i) > 0) {
-                index = i;
-                break;
+        for (int i = 1; i <= N + 1; i++) {
+            if (!set.contains(i)) {
+                return i;
             }
         }
-        return index;
+        return 0;
     }
 }

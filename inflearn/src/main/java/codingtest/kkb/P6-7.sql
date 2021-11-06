@@ -1,0 +1,38 @@
+-- P6
+SELECT
+    T.SALE_YM AS '판매년월',
+        SUM(T.0001) AS '상품0001판매개수',
+        SUM(T.0002) AS '상품0002판매개수',
+        SUM(T.0003) AS '상품0003판매개수',
+        SUM(T.0004) AS '상품0004판매개수',
+        SUM(T.0005) AS '상품0005판매개수',
+        SUM(T.TOTAL) AS '전체판매개수'
+FROM (
+         SELECT
+             KGS.SALE_YM,
+             CASE WHEN KGS.GOODS_CD = '0001' THEN SUM(KGS.SALE_CNT) END AS '0001',
+             CASE WHEN KGS.GOODS_CD = '0002' THEN SUM(KGS.SALE_CNT) END AS '0002',
+             CASE WHEN KGS.GOODS_CD = '0003' THEN SUM(KGS.SALE_CNT) END AS '0003',
+             CASE WHEN KGS.GOODS_CD = '0004' THEN SUM(KGS.SALE_CNT) END AS '0004',
+             CASE WHEN KGS.GOODS_CD = '0005' THEN SUM(KGS.SALE_CNT) END AS '0005',
+             SUM(KGS.SALE_CNT) AS TOTAL
+         FROM KKB_GOODS_S KGS
+         GROUP BY KGS.SALE_YM, KGS.GOODS_CD
+     ) AS T
+GROUP BY T.SALE_YM
+;
+
+-- P7
+SELECT * FROM
+    (
+      SELECT
+          KAT.ACNO,
+          KAT.TX_DT,
+          KAT.TX_SEQ,
+          KAT.TX_AF_BAL
+      FROM KKB_ACNO_TX KAT
+      WHERE KAT.TX_SEQ = (SELECT MAX(TX_SEQ) FROM KKB_ACNO_TX WHERE ACNO = KAT.ACNO AND TX_DT = KAT.TX_DT)
+    ) t
+GROUP BY t.ACNO, t.TX_DT
+ORDER BY t.ACNO, t.TX_DT, t.TX_SEQ DESC
+;

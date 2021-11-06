@@ -5,10 +5,12 @@ public class P2 {
         int[] A1 = {1, 1, 2, 3, 3};
         int[] A2 = {1, 1, 3};
         int[] A3 = {0, 1, 2};
+        int[] A4 = {0,0,0};
 
         System.out.println(solution(A1, 3));
         System.out.println(solution(A2, 2));
         System.out.println(solution(A3, 2));
+        System.out.println(solution(A4, 1));
     }
 
     private static boolean solution(int[] A, int K) {
@@ -20,8 +22,8 @@ public class P2 {
             }
         }
 
-//        if (A[0] != 1 && A[n - 1] != K) {
-        if (A[0] != 1 || A[n - 1] != K) {
+        if (A[0] > 1 || A[n - 1] != K) {
+//        if (A[0] != 1 || A[n - 1] != K) {
             return false;
         } else {
             return true;
